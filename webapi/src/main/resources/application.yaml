@@ -1,0 +1,6 @@
+# Spring Configuration
+spring:
+  application:
+    name: openapi-server-workshop
+  profiles:
+    active: dev

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.4.0</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>dev.sobue</groupId>
+  <artifactId>openapi-workshop</artifactId>
+  <name>OpenAPI Development Workshop</name>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <inceptionYear>2024</inceptionYear>
+
+  <issueManagement>
+    <system>Github</system>
+    <url>https://github.com/ssobue/openapi-workshop/issues</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>CircleCI v2</system>
+    <url>https://circleci.com/gh/ssobue/openapi-workshop</url>
+  </ciManagement>
+
+  <developers>
+    <developer>
+      <id>ssobue</id>
+      <name>SOBUE Sho</name>
+      <organizationUrl>https://github.com/ssobue</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/ssobue/openapi-workshop</url>
+    <connection>scm:git:https://github.com/ssobue/openapi-workshop.git</connection>
+    <developerConnection>scm:git:ssh://github.com:ssobue/openapi-workshop.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <modules>
+    <module>webapi</module>
+    <module>client</module>
+  </modules>
+
+  <properties>
+    <java.version>21</java.version>
+  </properties>
+
+  <dependencyManagement>
+  </dependencyManagement>
+</project>
