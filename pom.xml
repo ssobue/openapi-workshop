@@ -61,10 +61,8 @@
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
     <openapi-generator-maven-plugin.version>7.10.0</openapi-generator-maven-plugin.version>
     <!-- build properties -->
-    <sonar.coverage.jacoco.xmlReportPaths>
-      ./client/target/site/jacoco/jacoco.xml,
-      ./server/target/site/jacoco/jacoco.xml
-    </sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.exclusions>**/generated-sources/**</sonar.exclusions>
+    <sonar.coverage.jacoco.xmlReportPaths>**/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
 
   <dependencyManagement>
@@ -167,7 +165,6 @@
           <executions>
             <execution>
               <id>prepare-agent</id>
-              <phase>test-compile</phase>
               <goals>
                 <goal>prepare-agent</goal>
               </goals>
