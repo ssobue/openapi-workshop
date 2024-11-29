@@ -1,0 +1,68 @@
+openapi: 3.0.3
+
+components:
+  schemas:
+    Order:
+      properties:
+        id:
+          description: Order ID
+          readOnly: true
+          type: integer
+          format: int64
+        customerName:
+          description: Customer Name
+          required: true
+          type: string
+          minLength: 1
+          maxLength: 1000
+        status:
+          description: Order status
+          type: string
+          enum:
+            - PENDING_PAYMENT
+            - PROCESSING
+            - SHIPPED
+            - CANCELLED
+            - FAILED
+        items:
+          description: Order items
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+    OrderItem:
+      properties:
+        id:
+          description: Order Item ID
+          readOnly: true
+          type: integer
+          format: int64
+        orderId:
+          description: Order ID
+          readOnly: true
+          type: integer
+          format: int64
+        productId:
+          description: Product ID
+          required: true
+          type: integer
+          format: int64
+        quantity:
+          description: Ordered Quantity
+          required: true
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 10
+        price:
+          description: Price
+          readOnly: true
+          type: number
+          format: double
+        currency:
+          description: Applied currency
+          readOnly: true
+          type: string
+          enum:
+            - USD
+            - JPY
+            - EUR

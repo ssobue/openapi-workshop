@@ -51,6 +51,8 @@
 
   <properties>
     <java.version>21</java.version>
+    <mapstruct.version>1.6.3</mapstruct.version>
+    <mybatis-spring.version>3.0.4</mybatis-spring.version>
     <swagger.version>2.2.26</swagger.version>
     <jsr305.version>3.0.2</jsr305.version>
     <jackson-databind-nullable.version>0.2.6</jackson-databind-nullable.version>
@@ -67,6 +69,25 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- MapStruct -->
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
+      </dependency>
+      <!-- MyBatis -->
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis-spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter-test</artifactId>
+        <version>${mybatis-spring.version}</version>
+        <scope>test</scope>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core-jakarta -->
       <dependency>
         <groupId>io.swagger.core.v3</groupId>
@@ -143,9 +164,9 @@
             <failurePriority>0</failurePriority>
             <printFailingErrors>true</printFailingErrors>
             <analysisCache>true</analysisCache>
-            <excludes>
-              <exclude>**/generated-sources/*.java</exclude>
-            </excludes>
+            <excludeRoots>
+              <excludeRoot>target/generated-sources</excludeRoot>
+            </excludeRoots>
           </configuration>
           <executions>
             <execution>
