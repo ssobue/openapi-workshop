@@ -1,0 +1,13 @@
+openapi: 3.0.3
+
+info:
+  title: Workshop API
+  version: 0.0.1
+
+paths:
+  /sample:
+    get:
+      summary: sample
+      responses:
+        200:
+          description: sample response

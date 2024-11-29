@@ -51,6 +51,9 @@
 
   <properties>
     <java.version>21</java.version>
+    <swagger.version>2.2.26</swagger.version>
+    <jsr305.version>3.0.2</jsr305.version>
+    <jackson-databind-nullable.version>0.2.6</jackson-databind-nullable.version>
     <!-- plugins -->
     <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
     <spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
@@ -59,12 +62,32 @@
     <openapi-generator-maven-plugin.version>7.10.0</openapi-generator-maven-plugin.version>
     <!-- build properties -->
     <sonar.coverage.jacoco.xmlReportPaths>
-      ./client/target/site/jacoco-aggregate/jacoco.xml,
-      ./server/target/site/jacoco-aggregate/jacoco.xml
+      ./client/target/site/jacoco/jacoco.xml,
+      ./server/target/site/jacoco/jacoco.xml
     </sonar.coverage.jacoco.xmlReportPaths>
   </properties>
 
   <dependencyManagement>
+    <dependencies>
+      <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core-jakarta -->
+      <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-core-jakarta</artifactId>
+        <version>${swagger.version}</version>
+      </dependency>
+      <!-- @Nullable annotation -->
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>${jsr305.version}</version>
+      </dependency>
+      <!-- JSON processing: jackson -->
+      <dependency>
+        <groupId>org.openapitools</groupId>
+        <artifactId>jackson-databind-nullable</artifactId>
+        <version>${jackson-databind-nullable.version}</version>
+      </dependency>
+    </dependencies>
   </dependencyManagement>
 
   <build>
@@ -96,10 +119,11 @@
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>${spotbugs-maven-plugin.version}</version>
           <configuration>
+            <xmlOutput>true</xmlOutput>
             <effort>Max</effort>
             <threshold>Low</threshold>
             <failOnError>true</failOnError>
-            <xmlOutput>true</xmlOutput>
+            <excludeFilterFile>${project.basedir}/../spotbugs/spotbugs-exclude-generated-codes.xml</excludeFilterFile>
           </configuration>
           <executions>
             <execution>
