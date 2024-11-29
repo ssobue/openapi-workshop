@@ -51,8 +51,112 @@
 
   <properties>
     <java.version>21</java.version>
+    <!-- plugins -->
+    <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
+    <spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
+    <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
+    <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+    <openapi-generator-maven-plugin.version>7.10.0</openapi-generator-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
   </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${maven-checkstyle-plugin.version}</version>
+          <configuration>
+            <configLocation>google_checks.xml</configLocation>
+            <failsOnError>true</failsOnError>
+            <failOnViolation>true</failOnViolation>
+            <violationSeverity>error</violationSeverity>
+            <consoleOutput>true</consoleOutput>
+          </configuration>
+          <executions>
+            <execution>
+              <id>checkstyle</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>${spotbugs-maven-plugin.version}</version>
+          <configuration>
+            <effort>Max</effort>
+            <threshold>Low</threshold>
+            <failOnError>true</failOnError>
+            <xmlOutput>true</xmlOutput>
+          </configuration>
+          <executions>
+            <execution>
+              <id>spotbugs</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>${maven-pmd-plugin.version}</version>
+          <configuration>
+            <targetJdk>${java.version}</targetJdk>
+            <failOnViolation>true</failOnViolation>
+            <failurePriority>0</failurePriority>
+            <printFailingErrors>true</printFailingErrors>
+            <analysisCache>true</analysisCache>
+            <excludes>
+              <exclude>**/generated-sources/*.java</exclude>
+            </excludes>
+          </configuration>
+          <executions>
+            <execution>
+              <id>pmd</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>check</goal>
+                <goal>cpd-check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>prepare-agent</id>
+              <phase>test-compile</phase>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+              <configuration>
+                <propertyName>jacocoArgs</propertyName>
+                <includes>
+                  <include>*</include>
+                </includes>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.openapitools</groupId>
+          <artifactId>openapi-generator-maven-plugin</artifactId>
+          <version>${openapi-generator-maven-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
