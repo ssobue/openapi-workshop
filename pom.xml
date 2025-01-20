@@ -61,7 +61,7 @@
     <spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
     <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-    <openapi-generator-maven-plugin.version>7.10.0</openapi-generator-maven-plugin.version>
+    <openapi-generator-maven-plugin.version>7.11.0</openapi-generator-maven-plugin.version>
     <!-- build properties -->
     <sonar.exclusions>**/generated-sources/**</sonar.exclusions>
     <sonar.coverage.jacoco.xmlReportPaths>**/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
