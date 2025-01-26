@@ -9,6 +9,10 @@ executors:
     docker:
       # https://circleci.com/developer/ja/images/image/cimg/openjdk
       - image: cimg/openjdk:21.0
+  openjdk-latest:
+    docker:
+      # https://circleci.com/developer/ja/images/image/cimg/openjdk
+      - image: cimg/openjdk:23.0
 
 workflows:
   verify:
@@ -16,4 +20,10 @@ workflows:
       - maven/test:
           name: test
           executor: openjdk21
+          command: '-e verify'
+  verify-latest:
+    jobs:
+      - maven/test:
+          name: test
+          executor: openjdk-latest
           command: '-e verify'
