@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>webapi</artifactId>
-  <name>WebAPI Workshop</name>
+  <name>WebAPI Server Workshop</name>
 
   <dependencies>
     <dependency>
