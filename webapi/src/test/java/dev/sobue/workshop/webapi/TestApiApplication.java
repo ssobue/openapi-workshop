@@ -17,7 +17,7 @@ public class TestApiApplication {
    */
   public static void main(String[] args) {
     SpringApplication
-        // Use main method of ApiApplication.
+        // Use the main method of ApiApplication.
         .from(ApiApplication::main)
         // Launch Application with MySQL using Testcontainers.
         .with(ContainerConfiguration.class)

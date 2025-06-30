@@ -1,4 +1,4 @@
--- Create products table
+-- Create product table
 -- DROP TABLE IF EXISTS products;
 CREATE TABLE IF NOT EXISTS products
 (
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS products
     stock    INT            NOT NULL COMMENT 'Product stock quantity'
 ) COMMENT = 'Product';
 
--- Create orders table
+-- Create order table
 -- DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders
 (
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS orders
     updated_on    DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Updated Date'
 ) COMMENT = 'Order';
 
--- Create order_items table
+-- Create order items table
 -- DROP TABLE IF EXISTS order_items;
 CREATE TABLE IF NOT EXISTS order_items
 (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS order_items
     CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE RESTRICT
 ) COMMENT = 'Order detail';
 
--- Create exchange_rates table
+-- Create exchange rates table
 -- DROP TABLE IF EXISTS exchange_rates;
 CREATE TABLE IF NOT EXISTS exchange_rates
 (

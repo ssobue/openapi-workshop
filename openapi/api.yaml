@@ -272,7 +272,7 @@ paths:
               schema:
                 $ref: './order.yaml#/components/schemas/OrderItem'
     delete:
-      summary: Detele an order item
+      summary: Delete an order item
       operationId: deleteOrderItem
       tags:
         - Orders

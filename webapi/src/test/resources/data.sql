@@ -19,7 +19,8 @@ VALUES (1, 1, 1, 1200.00, 'USD'), -- Alice ordered 1 Laptop
        (2, 2, 1, 800.00, 'USD'),  -- Bob ordered 1 Smartphone
        (2, 5, 1, 50.00, 'USD'),   -- Bob ordered 1 Mouse
        (3, 4, 1, 70.00, 'USD'),   -- Carol ordered 1 Keyboard
-       (3, 3, 1, 150.00, 'USD'); -- Carol ordered 1 Headphones
+       (3, 3, 1, 150.00, 'USD');
+-- Carol ordered 1 Headphones
 
 -- Insert exchange rates
 INSERT INTO exchange_rates (currency_code, exchange_rate)
