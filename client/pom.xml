@@ -86,7 +86,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/../spec/api.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/../openapi/api.yaml</inputSpec>
                             <generatorName>java</generatorName>
                             <library>restclient</library>
                             <groupId>${project.groupId}</groupId>
