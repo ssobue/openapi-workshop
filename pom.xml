@@ -60,9 +60,9 @@
         <!-- plugins -->
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
         <spotbugs-maven-plugin.version>4.9.3.2</spotbugs-maven-plugin.version>
-        <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.27.0</maven-pmd-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
-        <openapi-generator-maven-plugin.version>7.13.0</openapi-generator-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>7.14.0</openapi-generator-maven-plugin.version>
         <!-- build properties -->
         <sonar.exclusions>**/generated-sources/**</sonar.exclusions>
         <sonar.coverage.jacoco.xmlReportPaths>**/jacoco/jacoco.xml
