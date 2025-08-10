@@ -2,6 +2,7 @@
 # Multi-file OpenAPI schema fragment
 
 type: object
+title: Order
 properties:
   id:
     description: Order ID
@@ -14,14 +15,7 @@ properties:
     minLength: 1
     maxLength: 1000
   status:
-    description: Order status
-    type: string
-    enum:
-      - PENDING_PAYMENT
-      - PROCESSING
-      - SHIPPED
-      - CANCELLED
-      - FAILED
+    $ref: './OrderStatus.yaml'
   items:
     description: Order items
     type: array

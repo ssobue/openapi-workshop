@@ -1,6 +1,7 @@
 # OrderItem schema
 
 type: object
+title: OrderItem
 properties:
   id:
     description: Order Item ID
@@ -28,13 +29,7 @@ properties:
     type: number
     format: double
   currency:
-    description: Applied currency
-    readOnly: true
-    type: string
-    enum:
-      - USD
-      - JPY
-      - EUR
+    $ref: './Currency.yaml'
 
 required:
   - productId

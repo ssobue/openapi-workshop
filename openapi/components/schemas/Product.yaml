@@ -2,6 +2,7 @@
 # Using partial file for multi-file OpenAPI
 
 type: object
+title: Product
 properties:
   id:
     description: Product ID
@@ -14,12 +15,7 @@ properties:
     minLength: 1
     maxLength: 1000
   currency:
-    description: Currency of price
-    type: string
-    enum:
-      - USD
-      - JPY
-      - EUR
+    $ref: './Currency.yaml'
   price:
     description: Product price
     type: number

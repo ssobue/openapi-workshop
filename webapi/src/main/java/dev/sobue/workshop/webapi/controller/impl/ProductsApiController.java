@@ -3,6 +3,7 @@ package dev.sobue.workshop.webapi.controller.impl;
 import dev.sobue.workshop.webapi.controller.ProductsApi;
 import dev.sobue.workshop.webapi.model.Product;
 import java.util.List;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,7 @@ public class ProductsApiController implements ProductsApi {
    */
   @Override
   public ResponseEntity<List<Product>> getAllProducts() {
-    return ProductsApi.super.getAllProducts();
+    return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
   }
 
   /**
@@ -27,7 +28,7 @@ public class ProductsApiController implements ProductsApi {
    */
   @Override
   public ResponseEntity<Product> getProduct(Long productId) {
-    return ProductsApi.super.getProduct(productId);
+    return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
   }
 
   /**
@@ -35,7 +36,7 @@ public class ProductsApiController implements ProductsApi {
    */
   @Override
   public ResponseEntity<Product> registerProduct(Product product) {
-    return ProductsApi.super.registerProduct(product);
+    return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
   }
 
   /**
@@ -43,7 +44,7 @@ public class ProductsApiController implements ProductsApi {
    */
   @Override
   public ResponseEntity<Product> updateProducts(Long productId) {
-    return ProductsApi.super.updateProducts(productId);
+    return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
   }
 
   /**
@@ -51,6 +52,6 @@ public class ProductsApiController implements ProductsApi {
    */
   @Override
   public ResponseEntity<Void> deleteProduct(Long productId) {
-    return ProductsApi.super.deleteProduct(productId);
+    return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
   }
 }

@@ -1,0 +1,9 @@
+# Currency schema
+
+title: Currency
+description: Money Currency
+type: string
+enum:
+  - USD
+  - JPY
+  - EUR

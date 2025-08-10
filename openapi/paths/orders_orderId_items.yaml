@@ -14,13 +14,13 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../openapi.yaml#/components/schemas/OrderItem'
+          $ref: '../components/schemas/OrderItem.yaml'
   responses:
     200:
       description: responses the order
       content:
         application/json:
           schema:
-            $ref: '../openapi.yaml#/components/schemas/OrderItem'
+            $ref: '../components/schemas/OrderItem.yaml'
     404:
       description: an order does not found
