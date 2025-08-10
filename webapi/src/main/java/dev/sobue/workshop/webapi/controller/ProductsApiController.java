@@ -1,6 +1,5 @@
-package dev.sobue.workshop.webapi.controller.impl;
+package dev.sobue.workshop.webapi.controller;
 
-import dev.sobue.workshop.webapi.controller.ProductsApi;
 import dev.sobue.workshop.webapi.model.Product;
 import java.util.List;
 import org.springframework.http.HttpStatus;

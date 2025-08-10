@@ -1,12 +1,10 @@
-package dev.sobue.workshop.webapi.controller.impl;
+package dev.sobue.workshop.webapi.controller;
 
-import dev.sobue.workshop.webapi.controller.OrdersApi;
 import dev.sobue.workshop.webapi.model.Currency;
 import dev.sobue.workshop.webapi.model.Order;
 import dev.sobue.workshop.webapi.model.OrderItem;
 import java.util.List;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
