@@ -11,18 +11,14 @@ get:
         type: integer
         format: int64
     - name: currency
-      description: 'target currency'
+      description: Target Currency
       in: query
       schema:
-        type: string
-        enum:
-          - USD
-          - JPY
-          - EUR
+        $ref: '../components/schemas/Currency.yaml'
   responses:
     200:
       description: responses the order
       content:
         application/json:
           schema:
-            $ref: '../openapi.yaml#/components/schemas/Order'
+            $ref: '../components/schemas/Order.yaml'

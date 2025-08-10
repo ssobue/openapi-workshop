@@ -7,7 +7,7 @@ info:
     name: Sho SOBUE
 
 servers:
-  - url: http://localhost:8080/v1
+  - url: http://localhost:8080/api/v1
     description: Local development
 
 tags:
@@ -18,25 +18,16 @@ tags:
 
 paths:
   /products:
-    $ref: ./paths/products.yaml
+    $ref: './paths/products.yaml'
   /products/{productId}:
-    $ref: ./paths/products@{productId}.yaml
+    $ref: './paths/products_productId.yaml'
   /orders:
-    $ref: ./paths/orders.yaml
+    $ref: './paths/orders.yaml'
   /orders/{orderId}:
-    $ref: ./paths/orders@{orderId}.yaml
+    $ref: './paths/orders_orderId.yaml'
   /orders/{orderId}/total:
-    $ref: ./paths/orders@{orderId}@total.yaml
+    $ref: './paths/orders_orderId_total.yaml'
   /orders/{orderId}/items:
-    $ref: ./paths/orders@{orderId}@items.yaml
+    $ref: './paths/orders_orderId_items.yaml'
   /orders/{orderId}/items/{itemId}:
-    $ref: ./paths/orders@{orderId}@items@{itemId}.yaml
-
-components:
-  schemas:
-    Product:
-      $ref: ./components/schemas/Product.yaml
-    Order:
-      $ref: ./components/schemas/Order.yaml
-    OrderItem:
-      $ref: ./components/schemas/OrderItem.yaml
+    $ref: './paths/orders_orderId_items_itemId.yaml'

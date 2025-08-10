@@ -1,0 +1,11 @@
+# OrderItem schema
+
+title: OrderStatus
+description: Order status
+type: string
+enum:
+  - PENDING_PAYMENT
+  - PROCESSING
+  - SHIPPED
+  - CANCELLED
+  - FAILED

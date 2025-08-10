@@ -128,9 +128,11 @@
                                 <documantationProvider>none</documantationProvider>
                                 <interfaceOnly>true</interfaceOnly>
                                 <requestMappingMode>api_interface</requestMappingMode>
+                                <skipDefaultInterface>true</skipDefaultInterface>
                                 <useBeanValidation>true</useBeanValidation>
                                 <booleanGetterPrefix>is</booleanGetterPrefix>
-                                <generateBuilders>true</generateBuilders>
+                                <bigDecimalAsString>true</bigDecimalAsString>
+                                <useTags>true</useTags>
                             </configOptions>
                         </configuration>
                     </execution>

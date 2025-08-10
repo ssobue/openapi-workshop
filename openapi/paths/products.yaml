@@ -11,7 +11,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../openapi.yaml#/components/schemas/Product'
+              $ref: '../components/schemas/Product.yaml'
 post:
   summary: Register a product
   operationId: registerProduct
@@ -21,11 +21,11 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../openapi.yaml#/components/schemas/Product'
+          $ref: '../components/schemas/Product.yaml'
   responses:
     201:
       description: responses the registered product
       content:
         application/json:
           schema:
-            $ref: '../openapi.yaml#/components/schemas/Product'
+            $ref: '../components/schemas/Product.yaml'

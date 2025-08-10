@@ -16,7 +16,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../openapi.yaml#/components/schemas/Order'
+            $ref: '../components/schemas/Order.yaml'
     404:
       description: an order does not found
 delete:

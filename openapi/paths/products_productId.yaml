@@ -1,5 +1,5 @@
 get:
-  summary: Get a product by produt ID
+  summary: Get a product by product ID
   operationId: getProduct
   tags:
     - Products
@@ -16,7 +16,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../openapi.yaml#/components/schemas/Product'
+            $ref: '../components/schemas/Product.yaml'
     404:
       description: a product does not found
 put:
@@ -37,7 +37,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: '../openapi.yaml#/components/schemas/Product'
+            $ref: '../components/schemas/Product.yaml'
     404:
       description: a product does not found
 delete:
