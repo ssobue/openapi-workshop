@@ -1,0 +1,42 @@
+openapi: 3.0.3
+
+info:
+  title: Workshop API
+  version: 0.0.1
+  contact:
+    name: Sho SOBUE
+
+servers:
+  - url: http://localhost:8080/v1
+    description: Local development
+
+tags:
+  - name: Products
+    description: Product Management APIs
+  - name: Orders
+    description: Order Management APIs
+
+paths:
+  /products:
+    $ref: ./paths/products.yaml
+  /products/{productId}:
+    $ref: ./paths/products@{productId}.yaml
+  /orders:
+    $ref: ./paths/orders.yaml
+  /orders/{orderId}:
+    $ref: ./paths/orders@{orderId}.yaml
+  /orders/{orderId}/total:
+    $ref: ./paths/orders@{orderId}@total.yaml
+  /orders/{orderId}/items:
+    $ref: ./paths/orders@{orderId}@items.yaml
+  /orders/{orderId}/items/{itemId}:
+    $ref: ./paths/orders@{orderId}@items@{itemId}.yaml
+
+components:
+  schemas:
+    Product:
+      $ref: ./components/schemas/Product.yaml
+    Order:
+      $ref: ./components/schemas/Order.yaml
+    OrderItem:
+      $ref: ./components/schemas/OrderItem.yaml

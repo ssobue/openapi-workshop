@@ -1,0 +1,38 @@
+get:
+  summary: Get an order by order ID
+  operationId: getOrder
+  tags:
+    - Orders
+  parameters:
+    - name: orderId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    200:
+      description: responses the order
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yaml#/components/schemas/Order'
+    404:
+      description: an order does not found
+delete:
+  summary: Delete an order by order ID
+  operationId: deleteOrder
+  tags:
+    - Orders
+  parameters:
+    - name: orderId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    204:
+      description: request has been succeeded
+    404:
+      description: an order does not found

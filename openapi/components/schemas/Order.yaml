@@ -1,0 +1,32 @@
+# Order schema
+# Multi-file OpenAPI schema fragment
+
+type: object
+properties:
+  id:
+    description: Order ID
+    readOnly: true
+    type: integer
+    format: int64
+  customerName:
+    description: Customer Name
+    type: string
+    minLength: 1
+    maxLength: 1000
+  status:
+    description: Order status
+    type: string
+    enum:
+      - PENDING_PAYMENT
+      - PROCESSING
+      - SHIPPED
+      - CANCELLED
+      - FAILED
+  items:
+    description: Order items
+    type: array
+    items:
+      $ref: './OrderItem.yaml'
+
+required:
+  - customerName

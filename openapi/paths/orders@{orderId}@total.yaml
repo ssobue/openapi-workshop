@@ -1,0 +1,28 @@
+get:
+  summary: Get an order by order ID
+  operationId: getOrderTotal
+  tags:
+    - Orders
+  parameters:
+    - name: orderId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: currency
+      description: 'target currency'
+      in: query
+      schema:
+        type: string
+        enum:
+          - USD
+          - JPY
+          - EUR
+  responses:
+    200:
+      description: responses the order
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yaml#/components/schemas/Order'
