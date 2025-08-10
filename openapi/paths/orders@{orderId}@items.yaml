@@ -1,0 +1,26 @@
+post:
+  summary: Add an order item to exists order
+  operationId: addOrderItem
+  tags:
+    - Orders
+  parameters:
+    - name: orderId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../openapi.yaml#/components/schemas/OrderItem'
+  responses:
+    200:
+      description: responses the order
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yaml#/components/schemas/OrderItem'
+    404:
+      description: an order does not found

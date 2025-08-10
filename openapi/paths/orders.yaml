@@ -1,0 +1,31 @@
+get:
+  summary: Get all Orders
+  operationId: getAllOrders
+  tags:
+    - Orders
+  responses:
+    200:
+      description: responses all orders
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../openapi.yaml#/components/schemas/Order'
+post:
+  summary: Register an order
+  operationId: registerOrder
+  tags:
+    - Orders
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../openapi.yaml#/components/schemas/Order'
+  responses:
+    201:
+      description: responses the registered product
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yaml#/components/schemas/Order'

@@ -1,0 +1,53 @@
+put:
+  summary: Update an order item
+  operationId: updateOrderItem
+  tags:
+    - Orders
+  parameters:
+    - name: orderId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: itemId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../openapi.yaml#/components/schemas/OrderItem'
+  responses:
+    200:
+      description: responses an order item
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yaml#/components/schemas/OrderItem'
+delete:
+  summary: Delete an order item
+  operationId: deleteOrderItem
+  tags:
+    - Orders
+  parameters:
+    - name: orderId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: itemId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    204:
+      description: request has been succeeded
+    404:
+      description: an order item does not found

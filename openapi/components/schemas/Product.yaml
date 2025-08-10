@@ -1,0 +1,37 @@
+# Product schema
+# Using partial file for multi-file OpenAPI
+
+type: object
+properties:
+  id:
+    description: Product ID
+    readOnly: true
+    type: integer
+    format: int64
+  name:
+    description: Product name
+    type: string
+    minLength: 1
+    maxLength: 1000
+  currency:
+    description: Currency of price
+    type: string
+    enum:
+      - USD
+      - JPY
+      - EUR
+  price:
+    description: Product price
+    type: number
+    format: double
+    minimum: 0.0
+  stock:
+    description: Stock quantity
+    type: integer
+    format: int32
+
+required:
+  - name
+  - currency
+  - price
+  - stock
