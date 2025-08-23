@@ -20,13 +20,13 @@
     <inceptionYear>2024</inceptionYear>
 
     <issueManagement>
-        <system>Github</system>
+        <system>GitHub</system>
         <url>https://github.com/ssobue/openapi-workshop/issues</url>
     </issueManagement>
 
     <ciManagement>
-        <system>CircleCI v2</system>
-        <url>https://circleci.com/gh/ssobue/openapi-workshop</url>
+        <system>GitHub Actions</system>
+        <url>https://github.com/ssobue/openapi-workshop/actions/workflows/main.yaml</url>
     </ciManagement>
 
     <developers>
