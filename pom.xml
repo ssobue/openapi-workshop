@@ -63,6 +63,9 @@
         <maven-pmd-plugin.version>3.27.0</maven-pmd-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.15.0</openapi-generator-maven-plugin.version>
+        <!-- Override Version Properties in Spring Boot BOM -->
+        <!-- Fixes CVE-2025-48924: Apache Commons Lang 3.18.0 -->
+        <commons-lang3.version>3.18.0</commons-lang3.version>
         <!-- build properties -->
         <sonar.exclusions>**/generated-sources/**</sonar.exclusions>
         <sonar.coverage.jacoco.xmlReportPaths>**/jacoco/jacoco.xml
