@@ -42,4 +42,4 @@ CREATE TABLE IF NOT EXISTS exchange_rates
     currency_code CHAR(3)                            NOT NULL UNIQUE COMMENT 'Currency Code',
     exchange_rate DECIMAL(10, 6)                     NOT NULL COMMENT 'Exchange rate',
     updated_on    DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Updated Date'
-) COMMENT = 'Exnchange Rate';
+) COMMENT = 'Exchange Rate';
