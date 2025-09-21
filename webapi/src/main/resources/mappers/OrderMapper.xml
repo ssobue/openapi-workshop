@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.sobue.workshop.order.mybatis.mapper.OrderMapper">
+
+    <resultMap id="orderResultMap" type="dev.sobue.workshop.order.Order">
+        <id property="id" column="id"/>
+        <result property="customerName" column="customer_name"/>
+        <result property="status" column="status"
+            typeHandler="dev.sobue.workshop.order.mybatis.typehandler.OrderStatusTypeHandler"/>
+        <result property="orderDate" column="order_date"/>
+        <result property="updatedOn" column="updated_on"/>
+        <collection property="items" column="{orderId=id}"
+            ofType="dev.sobue.workshop.order.OrderItem"
+            select="dev.sobue.workshop.order.mybatis.mapper.OrderItemMapper.selectByOrderId"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="orderResultMap">
+        SELECT id, customer_name, order_date, status, updated_on
+        FROM orders
+        ORDER BY id
+    </select>
+
+    <select id="selectById" parameterType="long" resultMap="orderResultMap">
+        SELECT id, customer_name, order_date, status, updated_on
+        FROM orders
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="dev.sobue.workshop.order.Order" useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO orders (customer_name, order_date, status)
+        VALUES (#{customerName},
+                #{orderDate},
+                #{status, typeHandler=dev.sobue.workshop.order.mybatis.typehandler.OrderStatusTypeHandler})
+    </insert>
+
+    <delete id="delete" parameterType="long">
+        DELETE
+        FROM orders
+        WHERE id = #{id}
+    </delete>
+</mapper>

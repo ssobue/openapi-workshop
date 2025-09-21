@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.sobue.workshop.order.mybatis.mapper.OrderItemMapper">
+
+    <resultMap id="orderItemResultMap" type="dev.sobue.workshop.order.OrderItem">
+        <id property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="quantity" column="quantity"/>
+        <result property="price" column="price"/>
+        <result property="currency" column="currency"
+            typeHandler="dev.sobue.workshop.common.mybatis.typehandler.CurrencyTypeHandler"/>
+    </resultMap>
+
+    <select id="selectByOrderId" resultMap="orderItemResultMap">
+        SELECT id, order_id, product_id, quantity, price, currency
+        FROM order_items
+        WHERE order_id = #{orderId}
+        ORDER BY id
+    </select>
+
+    <select id="selectById" parameterType="map" resultMap="orderItemResultMap">
+        SELECT id, order_id, product_id, quantity, price, currency
+        FROM order_items
+        WHERE order_id = #{orderId}
+          AND id = #{itemId}
+    </select>
+
+    <insert id="insert" parameterType="dev.sobue.workshop.order.OrderItem" useGeneratedKeys="true"
+        keyProperty="id">
+        INSERT INTO order_items (order_id, product_id, quantity, price, currency)
+        VALUES (#{orderId},
+                #{productId},
+                #{quantity},
+                #{price},
+                #{currency, typeHandler=dev.sobue.workshop.common.mybatis.typehandler.CurrencyTypeHandler})
+    </insert>
+
+    <update id="update" parameterType="dev.sobue.workshop.order.OrderItem">
+        UPDATE order_items
+        SET product_id = #{productId},
+            quantity   = #{quantity},
+            price      = #{price},
+            currency   = #{currency, typeHandler=dev.sobue.workshop.common.mybatis.typehandler.CurrencyTypeHandler}
+        WHERE id = #{id}
+          AND order_id = #{orderId}
+    </update>
+
+    <delete id="delete" parameterType="map">
+        DELETE
+        FROM order_items
+        WHERE order_id = #{orderId}
+          AND id = #{itemId}
+    </delete>
+
+    <delete id="deleteByOrderId">
+        DELETE
+        FROM order_items
+        WHERE order_id = #{orderId}
+    </delete>
+</mapper>

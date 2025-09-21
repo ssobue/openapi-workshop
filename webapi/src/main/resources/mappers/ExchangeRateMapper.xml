@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.sobue.workshop.common.mybatis.mapper.ExchangeRateMapper">
+
+    <resultMap id="exchangeRateResultMap" type="dev.sobue.workshop.common.ExchangeRate">
+        <id property="id" column="id"/>
+        <result property="currency" column="currency_code"
+            typeHandler="dev.sobue.workshop.common.mybatis.typehandler.CurrencyTypeHandler"/>
+        <result property="rate" column="exchange_rate"/>
+    </resultMap>
+
+    <select id="selectByCurrency" resultMap="exchangeRateResultMap">
+        SELECT id, currency_code, exchange_rate
+        FROM exchange_rates
+        WHERE currency_code =
+              #{currency, typeHandler=dev.sobue.workshop.common.mybatis.typehandler.CurrencyTypeHandler}
+    </select>
+</mapper>
