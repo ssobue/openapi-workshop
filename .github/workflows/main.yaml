@@ -1,5 +1,7 @@
 # https://docs.github.com/en/actions/how-tos/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven
 name: Java CI
+permissions:
+  contents: read
 
 on: [push]
 
