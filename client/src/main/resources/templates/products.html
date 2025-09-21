@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop Products</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #d0d7de; padding: 0.5rem; text-align: left; }
+        th { background-color: #f6f8fa; }
+        caption { text-align: left; font-weight: bold; margin-bottom: 1rem; }
+        .empty-state { padding: 1rem; background-color: #fff4ce; border: 1px solid #ffd33d; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Workshop Product Catalog</h1>
+    <p>Data sourced from the OpenAPI-powered Web API server.</p>
+</header>
+<main>
+    <section th:if="${hasData}">
+        <table>
+            <caption>Available Products</caption>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Currency</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">1</td>
+                <td th:text="${product.name}">Sample</td>
+                <td th:text="${product.currency}">JPY</td>
+                <td th:text="${product.price}">0.00</td>
+                <td th:text="${product.stock}">0</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <section th:if="${!hasData}" class="empty-state">
+        <p>No products could be loaded. Start the Web API server or register sample data, then refresh.</p>
+    </section>
+</main>
+</body>
+</html>
