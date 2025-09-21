@@ -12,21 +12,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductViewService {
 
-    private static final Logger log = LoggerFactory.getLogger(ProductViewService.class);
+  private static final Logger log = LoggerFactory.getLogger(ProductViewService.class);
 
-    private final ProductsApi productsApi;
+  private final ProductsApi productsApi;
 
-    @SuppressFBWarnings(value = "EI_EXPOSE_REP2", justification = "Spring injects a shared ProductsApi bean that this service must reuse")
-    public ProductViewService(ProductsApi productsApi) {
-        this.productsApi = productsApi;
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP2", justification = "Spring injects a shared ProductsApi bean that this service must reuse")
+  public ProductViewService(ProductsApi productsApi) {
+    this.productsApi = productsApi;
+  }
+
+  public List<Product> fetchProducts() {
+    try {
+      return productsApi.getAllProducts();
+    } catch (Exception ex) {
+      log.warn("Failed to load products from API", ex);
+      return Collections.emptyList();
     }
-
-    public List<Product> fetchProducts() {
-        try {
-            return productsApi.getAllProducts();
-        } catch (Exception ex) {
-            log.warn("Failed to load products from API", ex);
-            return Collections.emptyList();
-        }
-    }
+  }
 }

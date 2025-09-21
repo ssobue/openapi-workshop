@@ -1,5 +1,6 @@
-package dev.sobue.workshop.webapi;
+package dev.sobue.workshop;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Sho SOBUE
  */
 @SpringBootApplication
+@MapperScan({
+    "dev.sobue.workshop.common.mybatis.mapper",
+    "dev.sobue.workshop.product.mybatis.mapper",
+    "dev.sobue.workshop.order.mybatis.mapper"})
 public class ApiApplication {
 
   /**

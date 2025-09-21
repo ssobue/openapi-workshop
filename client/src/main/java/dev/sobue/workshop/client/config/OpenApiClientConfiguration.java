@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(OpenApiClientProperties.class)
 public class OpenApiClientConfiguration {
 
-    @Bean
-    public ApiClient apiClient(OpenApiClientProperties properties) {
-        ApiClient client = new ApiClient();
-        client.setBasePath(properties.getBaseUrl());
-        return client;
-    }
+  @Bean
+  public ApiClient apiClient(OpenApiClientProperties properties) {
+    ApiClient client = new ApiClient();
+    client.setBasePath(properties.getBaseUrl());
+    return client;
+  }
 }

@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ProductPageController {
 
-    private final ProductViewService productViewService;
+  private final ProductViewService productViewService;
 
-    public ProductPageController(ProductViewService productViewService) {
-        this.productViewService = productViewService;
-    }
+  public ProductPageController(ProductViewService productViewService) {
+    this.productViewService = productViewService;
+  }
 
-    @GetMapping("/")
-    public String index() {
-        return "redirect:/products";
-    }
+  @GetMapping("/")
+  public String index() {
+    return "redirect:/products";
+  }
 
-    @GetMapping("/products")
-    public String products(Model model) {
-        List<Product> products = productViewService.fetchProducts();
-        model.addAttribute("products", products);
-        model.addAttribute("hasData", !products.isEmpty());
-        return "products";
-    }
+  @GetMapping("/products")
+  public String products(Model model) {
+    List<Product> products = productViewService.fetchProducts();
+    model.addAttribute("products", products);
+    model.addAttribute("hasData", !products.isEmpty());
+    return "products";
+  }
 }

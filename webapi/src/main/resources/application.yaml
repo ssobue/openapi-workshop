@@ -4,3 +4,12 @@ spring:
     name: openapi-server-workshop
   profiles:
     active: dev
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+mybatis:
+  mapper-locations: classpath*:mappers/*.xml
+  type-handlers-package: dev.sobue.workshop.order.mybatis.typehandler,dev.sobue.workshop.common.mybatis.typehandler
+  configuration:
+    map-underscore-to-camel-case: true

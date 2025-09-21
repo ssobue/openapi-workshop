@@ -135,7 +135,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <!--suppress UnresolvedMavenProperty -->
-                    <argLine>${jacocoArgs}</argLine>
+                    <argLine>
+                        ${jacocoArgs} -javaagent:${settings.localRepository}/net/bytebuddy/byte-buddy-agent/${byte-buddy.version}/byte-buddy-agent-${byte-buddy.version}.jar
+                    </argLine>
                 </configuration>
             </plugin>
             <plugin>

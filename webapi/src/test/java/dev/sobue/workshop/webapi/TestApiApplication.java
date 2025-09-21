@@ -1,5 +1,6 @@
 package dev.sobue.workshop.webapi;
 
+import dev.sobue.workshop.ApiApplication;
 import org.springframework.boot.SpringApplication;
 
 /**
