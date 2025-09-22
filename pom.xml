@@ -59,7 +59,7 @@
         <jackson-databind-nullable.version>0.2.7</jackson-databind-nullable.version>
         <!-- plugins -->
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-        <spotbugs-maven-plugin.version>4.9.5.0</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.9.6.0</spotbugs-maven-plugin.version>
         <maven-pmd-plugin.version>3.27.0</maven-pmd-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.15.0</openapi-generator-maven-plugin.version>
