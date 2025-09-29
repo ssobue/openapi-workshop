@@ -62,7 +62,7 @@
         <spotbugs-maven-plugin.version>4.9.6.0</spotbugs-maven-plugin.version>
         <maven-pmd-plugin.version>3.27.0</maven-pmd-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
-        <openapi-generator-maven-plugin.version>7.15.0</openapi-generator-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>7.16.0</openapi-generator-maven-plugin.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <!-- Override Version Properties in Spring Boot BOM -->
         <!-- Fixes CVE-2025-48924: Apache Commons Lang 3.18.0 -->
