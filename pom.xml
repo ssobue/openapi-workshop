@@ -54,7 +54,7 @@
         <java.version>21</java.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <mybatis-spring.version>3.0.5</mybatis-spring.version>
-        <swagger.version>2.2.39</swagger.version>
+        <swagger.version>2.2.40</swagger.version>
         <jsr305.version>3.0.2</jsr305.version>
         <jackson-databind-nullable.version>0.2.8</jackson-databind-nullable.version>
         <!-- plugins -->
