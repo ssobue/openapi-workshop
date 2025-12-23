@@ -1,0 +1,24 @@
+name: Docs Markdown Lint
+
+on:
+  push:
+    paths:
+      - 'docs/**/*.md'
+      - '.github/workflows/markdown-lint.yaml'
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+      - '.github/workflows/markdown-lint.yaml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint Markdown with Super-Linter
+        uses: super-linter/super-linter@v7
+        env:
+          DEFAULT_BRANCH: main
+          VALIDATE_MARKDOWN: true
+          FILTER_REGEX_INCLUDE: docs/.*\\.md
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
