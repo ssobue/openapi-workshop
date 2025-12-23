@@ -18,9 +18,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Lint Markdown with Super-Linter
-        uses: super-linter/super-linter@v7
+        uses: super-linter/super-linter@v8.3.1
         env:
           DEFAULT_BRANCH: main
           VALIDATE_MARKDOWN: true
           FILTER_REGEX_INCLUDE: docs/.*\\.md
+          OUTPUT_DETAILS: detailed
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
