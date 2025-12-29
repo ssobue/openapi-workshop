@@ -1,7 +1,7 @@
 <!--
 doc_id: guide-01-docs-rules
 title: 文書管理ルール
-version: 1.0.0
+version: 1.0.1
 status: stable
 -->
 
@@ -74,7 +74,7 @@ title: 要求分析: リソース指向API
 ### 3.1 基本形式
 
 ```
-{category}-{NN}[-{topic}]
+{category}-{NN}
 ```
 
 例：
@@ -104,13 +104,14 @@ title: 要求分析: リソース指向API
 **ファイル名 = doc_id**
 
 ```
-docs/{category}/{doc_id}.md
+docs/{category}/{doc_id}[-{topic}].md
 ```
 
 例：
 
 ```
-doc_id: analysis-01-roa
+doc_id: analysis-01
+→ docs/analysis/analysis-01.md
 → docs/analysis/analysis-01-roa.md
 ```
 
