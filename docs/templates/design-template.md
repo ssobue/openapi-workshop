@@ -1,3 +1,10 @@
+<!--
+doc_id: design-template
+title: 設計: {topic}
+version: 1.0.0
+status: stable
+-->
+
 # 設計テンプレート
 
 [OpenAPI Workshop ドキュメント](https://github.com/ssobue/openapi-workshop/tree/main/docs) に準拠し、設計を具体化するためのアウトラインです。

@@ -1,3 +1,10 @@
+<!--
+doc_id: adr-template
+title: ADR: {topic}
+version: 1.0.0
+status: stable
+-->
+
 # ADR (Architecture Decision Record) テンプレート
 
 [OpenAPI Workshop ドキュメント](https://github.com/ssobue/openapi-workshop/tree/main/docs) を参考に、意思決定の背景と影響を記録するためのフォーマットです。

@@ -1,3 +1,10 @@
+<!--
+doc_id: plan-template
+title: 実装計画: {topic}
+version: 1.0.0
+status: stable
+-->
+
 # 実装計画テンプレート
 
 [OpenAPI Workshop ドキュメント](https://github.com/ssobue/openapi-workshop/tree/main/docs) の段階的アプローチに合わせ、実装手順を具体化するためのガイドです。

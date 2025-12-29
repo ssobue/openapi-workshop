@@ -1,3 +1,10 @@
+<!--
+doc_id: analysis-template
+title: 要求分析: {topic}
+version: 1.0.0
+status: stable
+-->
+
 # 要求分析テンプレート
 
 [OpenAPI Workshop ドキュメント](https://github.com/ssobue/openapi-workshop/tree/main/docs) の分析プロセスに倣い、要件の妥当性を確認するためのフレームです。

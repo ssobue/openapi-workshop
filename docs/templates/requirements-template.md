@@ -1,4 +1,11 @@
-# 生成AI向け要件テンプレート
+<!--
+doc_id: requirements-template
+title: 要件: {topic}
+version: 1.0.0
+status: stable
+-->
+
+# 要件テンプレート
 
 このテンプレートは、[OpenAPI Workshop ドキュメント](https://github.com/ssobue/openapi-workshop/tree/main/docs) に示される手法と整合しながら、プロジェクトのアイデアを体系的な要件へと落とし込むためのものです。
 
