@@ -3,7 +3,7 @@ doc_id: analysis-01
 title: 要求分析: リソース指向設計
 version: 1.2.0
 source_template: docs/templates/analysis-template.md
-status: draft
+status: stable
 -->
 
 # 要求分析: リソース指向設計

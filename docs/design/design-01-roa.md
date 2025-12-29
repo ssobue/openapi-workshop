@@ -2,7 +2,7 @@
 doc_id: design-01
 title: 設計: リソース指向設計
 version: 1.0.0
-status: draft
+status: stable
 source_template: docs/templates/design-template.md
 -->
 

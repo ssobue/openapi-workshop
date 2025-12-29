@@ -2,7 +2,7 @@
 doc_id: requirements-01
 title: 要件: リソース指向設計
 version: 1.1.0
-status: draft
+status: stable
 source_template: docs/templates/requirements-template.md
 -->
 
