@@ -1,7 +1,7 @@
 <!--
 doc_id: design-01
 title: 設計: リソース指向設計
-version: 1.0.0
+version: 1.0.1
 status: stable
 source_template: docs/templates/design-template.md
 -->
@@ -88,4 +88,4 @@ source_template: docs/templates/design-template.md
 3. `docs/adr/adr-01-rfc9457.md`
 4. `docs/adr/adr-02-java21-spring-boot.md`
 5. `docs/adr/adr-03-http-rfc9110-9112.md`
-6. `docs/plan/plan-01-roa.md`（予定）
+6. `docs/plan/plan-01-roa.md`

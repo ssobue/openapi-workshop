@@ -1,7 +1,7 @@
 <!--
 doc_id: requirements-01
 title: 要件: リソース指向設計
-version: 1.1.0
+version: 1.1.1
 status: stable
 source_template: docs/templates/requirements-template.md
 -->
@@ -23,8 +23,8 @@ source_template: docs/templates/requirements-template.md
   - TBD（既存のアーキテクチャ図、API 仕様、プロダクトブリーフがあればリンクを追記）
 - **補助ドキュメント:**
   1. `docs/analysis/analysis-01-roa.md`
-  2. `docs/design/design-01-roa.md`（予定）
-  3. `docs/plan/plan-01-roa.md`（予定）
+  2. `docs/design/design-01-roa.md`
+  3. `docs/plan/plan-01-roa.md`
   4. `docs/adr/adr-01-rfc9457.md`
   5. `docs/adr/adr-02-java21-spring-boot.md`
   6. `docs/adr/adr-03-http-rfc9110-9112.md`
