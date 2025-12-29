@@ -1,7 +1,7 @@
 <!--
 doc_id: guide-01-docs-rules
 title: 文書管理ルール
-version: 1.0.2
+version: 1.0.3
 status: stable
 -->
 
@@ -100,7 +100,7 @@ title: 要求分析: リソース指向API
 
 ### 4.1 原則
 
-**ファイル名 = doc_id**
+**ファイル名 = doc_id** or **ファイル名 = doc_id+topic**
 
 ```
 docs/{category}/{doc_id}[-{topic}].md
