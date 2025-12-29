@@ -1,9 +1,8 @@
 <!--
 doc_id: analysis-01
 title: 要求分析: リソース指向設計
-version: 1.1.0
+version: 1.2.0
 source_template: docs/templates/analysis-template.md
-related: n/a
 status: draft
 -->
 
@@ -21,6 +20,7 @@ status: draft
   - プログラミング言語および実行環境は、Java 21 以降、Spring Boot（Servlet / WebMVC）とする。
   - ユーザーは学習目的で、1日（約8時間）程度で実施可能な内容とする。
   - WebAPIのエラーメッセージは、`RFC 9457: Problem Details for HTTP APIs` に従う
+  - HTTPを利用したWebAPIを前提とし、`RFC9110: HTTP Semantics` や `RFC9112: HTTP/1.1` に従う
 
 - **想定外:**
   - プログラミング言語やフレームワークの一般的な利用方法を理解してもらうことは、本スコープには含めない。
