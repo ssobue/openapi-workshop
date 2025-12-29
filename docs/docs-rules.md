@@ -1,7 +1,7 @@
 <!--
 doc_id: guide-01-docs-rules
 title: 文書管理ルール
-version: 1.0.1
+version: 1.0.2
 status: stable
 -->
 
@@ -80,9 +80,8 @@ title: 要求分析: リソース指向API
 例：
 
 * `analysis-01`
-* `analysis-01-roa`
-* `design-02-authz`
-* `adr-03-db-schema`
+* `design-02`
+* `adr-03`
 
 ### 3.2 category（固定語彙）
 
