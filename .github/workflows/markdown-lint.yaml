@@ -33,7 +33,7 @@ jobs:
         env:
           BASE_BRANCH: ${{ steps.base-branch.outputs.name }}
       - name: Lint Markdown with Super-Linter
-        uses: super-linter/super-linter@v8.3.1
+        uses: super-linter/super-linter@v8.3.2
         env:
           DEFAULT_BRANCH: ${{ steps.base-branch.outputs.name }}
           VALIDATE_MARKDOWN: true
