@@ -1,7 +1,14 @@
-# https://docs.github.com/en/actions/how-tos/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven
-name: Java CI
+name: Java Build and Testing
 
-on: [push]
+on:
+  push:
+    paths: &target-paths
+      - '**/src/**/*.java'
+      - '**/src/*/resources/**'
+      - '**/pom.xml'
+      - '.github/workflows/java-build.yaml'
+  pull_request:
+    paths: *target-paths
 
 jobs:
   build:
