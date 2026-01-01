@@ -485,6 +485,7 @@ components:
       additionalProperties: false
     ProblemDetails:
       type: object
+      description: RFC 9457 Problem Details object.
       required:
         - type
         - title
@@ -505,6 +506,7 @@ components:
         instance:
           type: string
           format: uri
+      additionalProperties: true
   responses:
     ProblemDetails:
       description: Problem Details (RFC 9457)
@@ -512,3 +514,12 @@ components:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/ProblemDetails'
+          examples:
+            invalid-request:
+              summary: Invalid request
+              value:
+                type: https://example.com/problems/invalid-request
+                title: Invalid request
+                status: 400
+                detail: name must not be empty
+                instance: http://127.0.0.1:8080/products
