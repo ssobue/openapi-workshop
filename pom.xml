@@ -17,6 +17,10 @@
 
     <name>OpenAPI Workshop Parent</name>
 
+    <modules>
+        <module>workshop-api</module>
+    </modules>
+
     <developers>
         <developer>
             <name>SOBUE Sho</name>
