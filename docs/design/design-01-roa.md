@@ -1,7 +1,7 @@
 <!--
 doc_id: design-01
 title: 設計: リソース指向設計
-version: 1.0.1
+version: 1.1.0
 status: stable
 source_template: docs/templates/design-template.md
 -->
@@ -89,3 +89,20 @@ source_template: docs/templates/design-template.md
 4. `docs/adr/adr-02-java21-spring-boot.md`
 5. `docs/adr/adr-03-http-rfc9110-9112.md`
 6. `docs/plan/plan-01-roa.md`
+
+## 9. HTTP セマンティクス確認
+1. **メソッドの安全性・冪等性 (RFC 9110):**
+   - [ ] GET: safe / idempotent。読み取り専用で副作用を持たない。
+   - [ ] POST: not safe / not idempotent。作成用途に限定する。
+   - [ ] PUT: not safe / idempotent。全置換を行い、同一入力で結果が変わらない。
+   - [ ] PATCH: not safe / idempotent。フィールド値の置換のみを許容する。
+   - [ ] DELETE: not safe / idempotent。削除済みでも 404 を返して状態は不変。
+2. **ステータスコード運用:**
+   1) 200 OK: GET/PUT/PATCH の成功応答。
+   2) 201 Created: POST による作成成功。
+   3) 204 No Content: DELETE の成功応答。
+   4) 400 Bad Request: 入力検証失敗や JSON 不正。
+   5) 404 Not Found: リソース不在。
+   6) 500 Internal Server Error: 想定外の例外。
+3. **適用範囲:**
+   1) Products / Orders / OrderLines の全エンドポイントに同一ルールを適用する。
